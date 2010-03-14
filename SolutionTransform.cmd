@@ -21,5 +21,5 @@ REM    3) Remove "treat warnings as errors".  Otherwise, the current silverlight
 
 REM Things we need before returned to trunk
 REM    1) Integrate into the build system.
-
+REM    2) Clean up all of the various silverlight project files in source and put them into .gitignore.
 
