@@ -30,7 +30,7 @@ namespace Castle.DynamicProxy
 		}
 
 #if SILVERLIGHT
-#warning What would persisting a proxy builder mean in silverlight?
+// #warning What would persisting a proxy builder mean in silverlight?
 #else
 		/// <summary>
 		/// Saves the generated assembly to a physical file. Note that this renders the <see cref="PersistentProxyBuilder"/> unusable.

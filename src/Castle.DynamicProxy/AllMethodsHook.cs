@@ -27,7 +27,7 @@ namespace Castle.DynamicProxy
 		{
 			return methodInfo.DeclaringType != typeof (Object)
 #if SILVERLIGHT
-#warning What to do?
+// #warning What to do?
 				;
 #else
 			        && methodInfo.DeclaringType != typeof (MarshalByRefObject)

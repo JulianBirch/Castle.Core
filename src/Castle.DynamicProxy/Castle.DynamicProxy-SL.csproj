@@ -1,10 +1,6 @@
-<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
   <PropertyGroup>
     <RootPath Condition=" '$(RootPath)' == '' ">$(MSBuildProjectDirectory)\..\..</RootPath>
-    <SilverlightApplication>false</SilverlightApplication>
-    <ValidateXaml>true</ValidateXaml>
-    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
-    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
   </PropertyGroup>
   <PropertyGroup>
     <ProjectType>Local</ProjectType>
@@ -32,7 +28,7 @@
     </FileUpgradeFlags>
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
-    <SignAssembly>true</SignAssembly>
+    <SignAssembly>false</SignAssembly>
     <OldToolsVersion>2.0</OldToolsVersion>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
   </PropertyGroup>
@@ -52,7 +48,7 @@
     <Optimize>false</Optimize>
     <RegisterForComInterop>false</RegisterForComInterop>
     <RemoveIntegerChecks>false</RemoveIntegerChecks>
-    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
     <WarningLevel>4</WarningLevel>
     <DebugType>full</DebugType>
     <ErrorReport>prompt</ErrorReport>
@@ -74,7 +70,7 @@
     <Optimize>true</Optimize>
     <RegisterForComInterop>false</RegisterForComInterop>
     <RemoveIntegerChecks>false</RemoveIntegerChecks>
-    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
     <WarningLevel>4</WarningLevel>
     <DebugType>pdbonly</DebugType>
     <ErrorReport>prompt</ErrorReport>
@@ -103,7 +99,6 @@
     <Compile Include="AllMethodsHook.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="AssemblyInfo.cs" />
     <Compile Include="CompositionInvocation.cs" />
     <Compile Include="Contributors\CompositeTypeContributor.cs" />
     <Compile Include="Generators\AttributeDisassembler.cs" />
@@ -344,10 +339,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Reference>
-      <SpecificVersion>False</SpecificVersion>
-      <Private>True</Private>
-    </Reference>
+    <ProjectReference Include="..\Castle.Core\Castle.Core-SL.csproj">
+      <Project>{E4FA5B53-7D36-429E-8E5C-53D5479242BA}</Project>
+      <Name>Castle.Core-SL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(RootPath)\Settings.proj" />
   <Import Project="$(BuildScriptsPath)\Castle.Common.targets" />
@@ -359,9 +354,6 @@
   </PropertyGroup>
   <ProjectExtensions>
     <VisualStudio>
-      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
-        <SilverlightProjectProperties />
-      </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
   <Import Condition="" Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\v3.0\Microsoft.Silverlight.CSharp.targets" />

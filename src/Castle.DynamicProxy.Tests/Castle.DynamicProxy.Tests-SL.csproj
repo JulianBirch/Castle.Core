@@ -1,4 +1,4 @@
-<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Castle.DynamicProxy.Tests</RootNamespace>
     <AssemblyName>Castle.DynamicProxy.Tests</AssemblyName>
-    <SignAssembly>true</SignAssembly>
+    <SignAssembly>false</SignAssembly>
     <AssemblyOriginatorKeyFile>..\..\buildscripts\CastleKey.snk</AssemblyOriginatorKeyFile>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
@@ -17,10 +17,6 @@
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
-    <SilverlightApplication>false</SilverlightApplication>
-    <ValidateXaml>true</ValidateXaml>
-    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
-    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -30,7 +26,7 @@
     <DefineConstants>TRACE;DEBUG;SILVERLIGHT</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
     <NoWarn>
     </NoWarn>
     <UseVSHostingProcess>true</UseVSHostingProcess>
@@ -44,7 +40,7 @@
     <DefineConstants>TRACE;SILVERLIGHT</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
     <NoStdLib>true</NoStdLib>
     <NoConfig>true</NoConfig>
   </PropertyGroup>
@@ -53,13 +49,8 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\nunit.framework.dll</HintPath>
       <Private>True</Private>
-      <!--Couldn't rebase ..\..\lib\nunit.framework.dll.-->
-    </Reference>
-    <Reference Include="Rhino.Mocks.CPP.Interfaces, Version=1.0.3078.4206, Culture=neutral, PublicKeyToken=0b3305902db7183f, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\net-3.5\Rhino.Mocks.CPP.Interfaces.dll</HintPath>
-      <Private>True</Private>
-      <!--Couldn't rebase ..\..\lib\net-3.5\Rhino.Mocks.CPP.Interfaces.dll.-->
+      <!--Couldn't rebase ..\..\lib\nunit.framework.dll.
+Reference was in (D:\envision\CastleCore\Castle.Core\src\Castle.DynamicProxy.Tests\Castle.DynamicProxy.Tests-SL.csproj)-->
     </Reference>
     <Reference Include="system">
       <Private>True</Private>
@@ -250,14 +241,14 @@
     <Service Include="{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}" />
   </ItemGroup>
   <ItemGroup>
-    <Reference>
-      <SpecificVersion>False</SpecificVersion>
-      <Private>True</Private>
-    </Reference>
-    <Reference>
-      <SpecificVersion>False</SpecificVersion>
-      <Private>True</Private>
-    </Reference>
+    <ProjectReference Include="..\Castle.Core\Castle.Core-SL.csproj">
+      <Project>{E4FA5B53-7D36-429E-8E5C-53D5479242BA}</Project>
+      <Name>Castle.Core-SL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Castle.DynamicProxy\Castle.DynamicProxy-SL.csproj">
+      <Project>{2DE7CC8C-6F06-43BC-A7B6-9466BEDEAC28}</Project>
+      <Name>Castle.DynamicProxy-SL</Name>
+    </ProjectReference>
   </ItemGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
@@ -268,9 +259,6 @@
   -->
   <ProjectExtensions>
     <VisualStudio>
-      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
-        <SilverlightProjectProperties />
-      </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
   <Import Condition="" Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\v3.0\Microsoft.Silverlight.CSharp.targets" />

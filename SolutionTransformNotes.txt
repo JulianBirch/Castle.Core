@@ -1,8 +1,0 @@
-The following removes logging
-
-tools\SolutionTransform\SolutionTransform Modify --solution D:\envision\CastleCore\Castle.Core\Castle.Core-vs2008.sln --remove Castle.Services.Logging.log4netIntegration-vs2008 Castle.Services.Logging
-.NLogIntegration-vs2008
-
-The following creates the Silverlight solution
-
-tools\SolutionTransform\SolutionTransform Retarget --solution D:\envision\CastleCore\Castle.Core\Castle.Core-Modified.sln --assemblyPaths ..\lib\silverlight-3.0 --target Silverlight30 --outputPaths build\silverlight30 --rename -SL 

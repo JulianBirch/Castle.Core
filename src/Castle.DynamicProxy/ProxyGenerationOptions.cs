@@ -58,7 +58,7 @@ namespace Castle.DynamicProxy
 		}
 
 #if SILVERLIGHT
-#warning What to do?
+// #warning What to do?
 #else
 		private ProxyGenerationOptions(SerializationInfo info, StreamingContext context)
 		{
@@ -85,7 +85,7 @@ namespace Castle.DynamicProxy
 		}
 
 #if SILVERLIGHT
-#warning What to do?
+// #warning What to do?
 #else
 		public void GetObjectData(SerializationInfo info, StreamingContext context)
 		{

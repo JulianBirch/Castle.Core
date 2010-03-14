@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Castle.Core.Tests</RootNamespace>
     <AssemblyName>Castle.Core.Tests</AssemblyName>
-    <SignAssembly>true</SignAssembly>
+    <SignAssembly>false</SignAssembly>
     <AssemblyOriginatorKeyFile>..\..\buildscripts\CastleKey.snk</AssemblyOriginatorKeyFile>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
@@ -17,10 +17,6 @@
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
-    <SilverlightApplication>false</SilverlightApplication>
-    <ValidateXaml>true</ValidateXaml>
-    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
-    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -49,7 +45,8 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\nunit.framework.dll</HintPath>
       <Private>True</Private>
-      <!--Couldn't rebase ..\..\lib\nunit.framework.dll.-->
+      <!--Couldn't rebase ..\..\lib\nunit.framework.dll.
+Reference was in (D:\envision\CastleCore\Castle.Core\src\Castle.Core.Tests\Castle.Core.Tests-SL.csproj)-->
     </Reference>
     <Reference Include="system">
       <Private>True</Private>
@@ -95,10 +92,10 @@
     <Content Include="Resources\MoreRes\file2.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Reference>
-      <SpecificVersion>False</SpecificVersion>
-      <Private>True</Private>
-    </Reference>
+    <ProjectReference Include="..\Castle.Core\Castle.Core-SL.csproj">
+      <Project>{E4FA5B53-7D36-429E-8E5C-53D5479242BA}</Project>
+      <Name>Castle.Core-SL</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\buildscripts\CastleKey.snk">

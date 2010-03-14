@@ -112,7 +112,7 @@ namespace Castle.DynamicProxy
 			fieldValues = fieldValuesList.ToArray();
 		}
 #else
-#warning CustomAttributeData is internal in Silverlight
+// #warning CustomAttributeData is internal in Silverlight
 #endif
 
 		public static IEnumerable<CustomAttributeBuilder> GetNonInheritableAttributes(MemberInfo member)

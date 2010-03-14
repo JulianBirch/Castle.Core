@@ -114,7 +114,7 @@ namespace Castle.DynamicProxy.Generators
 				ThrowInvalidBaseType(type, "it does not have accessible parameterless constructor");
 			}
 #else
-#warning this constructor exists in SL 3, so we can remove the if when we move to SL 3
+// #warning this constructor exists in SL 3, so we can remove the if when we move to SL 3
 #endif
 		}
 
@@ -198,7 +198,7 @@ namespace Castle.DynamicProxy.Generators
 			targetField = emitter.CreateField("__target", proxyTargetType);
 
 #if SILVERLIGHT
-#warning XmlIncludeAttribute is in silverlight, do we want to explore this?
+// #warning XmlIncludeAttribute is in silverlight, do we want to explore this?
 #else
 			emitter.DefineCustomAttributeFor<XmlIgnoreAttribute>(targetField);
 #endif

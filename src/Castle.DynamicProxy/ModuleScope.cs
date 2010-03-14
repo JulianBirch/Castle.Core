@@ -298,7 +298,7 @@ namespace Castle.DynamicProxy
 			string moduleDirectory = signStrongName ? StrongNamedModuleDirectory : WeakNamedModuleDirectory;
 
 #if SILVERLIGHT
-#warning What to do?
+// #warning What to do?
 #else
 			if (savePhysicalAssembly)
 			{
@@ -329,7 +329,7 @@ namespace Castle.DynamicProxy
 				if (keyPairStream != null)
 				{
 #if SILVERLIGHT
-#warning Not sure how to sign an assembly given the byte[]???
+// #warning Not sure how to sign an assembly given the byte[]???
 					#region This isn't working (or appearing to be working correctly???)
 					//I pulled the below from the following article
 					//http://www.c-sharpcorner.com/UploadFile/shashijeevan/PublicKeyTokenGenerato08302005015104AM/PublicKeyTokenGenerato.aspx
@@ -356,7 +356,7 @@ namespace Castle.DynamicProxy
 		}
 
 #if SILVERLIGHT
-#warning How and where would you save this in silverlight?
+// #warning How and where would you save this in silverlight?
 #else
 		/// <summary>
 		/// Saves the generated assembly with the name and directory information given when this <see cref="ModuleScope"/> instance was created (or with
@@ -448,7 +448,7 @@ namespace Castle.DynamicProxy
 #endif
 
 #if SILVERLIGHT
-#warning What to do?
+// #warning What to do?
 #else
 		private void AddCacheMappings(AssemblyBuilder builder)
 		{
@@ -468,7 +468,7 @@ namespace Castle.DynamicProxy
 #endif
 
 #if SILVERLIGHT
-#warning What to do?
+// #warning What to do?
 #else
 		/// <summary>
 		/// Loads the generated types from the given assembly into this <see cref="ModuleScope"/>'s cache.
