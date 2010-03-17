@@ -45,14 +45,17 @@ limitations under the License.
 		AssemblyFile="$(NCoverPath)/Build Task Plugins/NCover.MSBuildTasks.dll"
 		Condition="$(TestRunner_EnableCoverage)" />
 
-	
+	<Target Name="SolutionTransform">
+	  <Exec Command="$(BuildScriptsPath)\SolutionTransform.cmd" />
+	</Target>
 	<!--
 		Public targets
 	-->
 	
+	
 	<Target
-		Name="BuildProject"
-		>
+		Name="BuildProject" DependsOnTargets="SolutionTransform">
+		
 
 		<MSBuild Projects="$(SolutionPath)" Targets="Build" Properties="Configuration=$(Configuration)$(BuildFramework);BuildConstants=$(BuildConstants);MSBuildTargets=$(MSBuildTargets);TargetFrameworkVersion=$(TargetFrameworkVersion)">
 

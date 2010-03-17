@@ -9,65 +9,70 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Castle.DynamicProxy.Tests</RootNamespace>
     <AssemblyName>Castle.DynamicProxy.Tests</AssemblyName>
-    <SignAssembly>false</SignAssembly>
+    <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>..\..\buildscripts\CastleKey.snk</AssemblyOriginatorKeyFile>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <OldToolsVersion>2.0</OldToolsVersion>
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>build\silverlight30\Debug</OutputPath>
-    <DefineConstants>TRACE;DEBUG;SILVERLIGHT</DefineConstants>
+    <OutputPath>build\net40\Debug</OutputPath>
+    <DefineConstants>TRACE;DEBUG;DOTNET40</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <NoWarn>
     </NoWarn>
     <UseVSHostingProcess>true</UseVSHostingProcess>
-    <NoStdLib>true</NoStdLib>
-    <NoConfig>true</NoConfig>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>build\silverlight30\Release</OutputPath>
-    <DefineConstants>TRACE;SILVERLIGHT</DefineConstants>
+    <OutputPath>build\net40\Release</OutputPath>
+    <DefineConstants>TRACE;DOTNET40</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    <NoStdLib>true</NoStdLib>
-    <NoConfig>true</NoConfig>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="adodb, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\net-3.5\adodb.dll</HintPath>
+      <!--Couldn't rebase ..\..\lib\net-3.5\adodb.dll.
+Reference was in (D:\envision\CastleCore\Castle.Core\src\Castle.DynamicProxy.Tests\Castle.DynamicProxy.Tests-vs2008.csproj)-->
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
     <Reference Include="nunit.framework, Version=2.5.0.9122, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\nunit.framework.dll</HintPath>
-      <Private>True</Private>
       <!--Couldn't rebase ..\..\lib\nunit.framework.dll.
-Reference was in (D:\envision\CastleCore\Castle.Core\src\Castle.DynamicProxy.Tests\Castle.DynamicProxy.Tests-SL.csproj)-->
+Reference was in (D:\envision\CastleCore\Castle.Core\src\Castle.DynamicProxy.Tests\Castle.DynamicProxy.Tests-vs2008.csproj)-->
     </Reference>
-    <Reference Include="system">
-      <Private>True</Private>
+    <Reference Include="Rhino.Mocks.CPP.Interfaces, Version=1.0.3078.4206, Culture=neutral, PublicKeyToken=0b3305902db7183f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\net-3.5\Rhino.Mocks.CPP.Interfaces.dll</HintPath>
+      <!--Couldn't rebase ..\..\lib\net-3.5\Rhino.Mocks.CPP.Interfaces.dll.
+Reference was in (D:\envision\CastleCore\Castle.Core\src\Castle.DynamicProxy.Tests\Castle.DynamicProxy.Tests-vs2008.csproj)-->
     </Reference>
-    <Reference Include="mscorlib" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core">
-      <Private>True</Private>
+      <RequiredTargetFramework>v4.0</RequiredTargetFramework>
     </Reference>
+    <Reference Include="System.Data" />
     <Reference Include="System.Runtime.Serialization">
-      <Private>True</Private>
+      <RequiredTargetFramework>v4.0</RequiredTargetFramework>
     </Reference>
     <Reference Include="System.ServiceModel">
-      <Private>True</Private>
+      <RequiredTargetFramework>v4.0</RequiredTargetFramework>
     </Reference>
-    <Reference Include="System.Xml">
-      <Private>True</Private>
-    </Reference>
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccessLevelTestCase.cs" />
@@ -241,13 +246,13 @@ Reference was in (D:\envision\CastleCore\Castle.Core\src\Castle.DynamicProxy.Tes
     <Service Include="{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Castle.Core\Castle.Core-SL.csproj">
+    <ProjectReference Include="..\Castle.Core\Castle.Core-VS2010.csproj">
       <Project>{E4FA5B53-7D36-429E-8E5C-53D5479242BA}</Project>
-      <Name>Castle.Core-SL</Name>
+      <Name>Castle.Core-VS2010</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Castle.DynamicProxy\Castle.DynamicProxy-SL.csproj">
+    <ProjectReference Include="..\Castle.DynamicProxy\Castle.DynamicProxy-VS2010.csproj">
       <Project>{2DE7CC8C-6F06-43BC-A7B6-9466BEDEAC28}</Project>
-      <Name>Castle.DynamicProxy-SL</Name>
+      <Name>Castle.DynamicProxy-VS2010</Name>
     </ProjectReference>
   </ItemGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
@@ -257,12 +262,5 @@ Reference was in (D:\envision\CastleCore\Castle.Core\src\Castle.DynamicProxy.Tes
   <Target Name="AfterBuild">
   </Target>
   -->
-  <ProjectExtensions>
-    <VisualStudio>
-      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
-        <SilverlightProjectProperties />
-      </FlavorProperties>
-    </VisualStudio>
-  </ProjectExtensions>
-  <Import Condition="" Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\v3.0\Microsoft.Silverlight.CSharp.targets" />
+  <Import Condition="" Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

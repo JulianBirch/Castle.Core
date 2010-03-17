@@ -28,22 +28,22 @@
     </FileUpgradeFlags>
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
-    <SignAssembly>false</SignAssembly>
+    <SignAssembly>true</SignAssembly>
     <OldToolsVersion>2.0</OldToolsVersion>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <OutputPath>build\silverlight30\Debug</OutputPath>
+    <OutputPath>build\net40\Debug</OutputPath>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
     <BaseAddress>285212672</BaseAddress>
     <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
     <ConfigurationOverrideFile>
     </ConfigurationOverrideFile>
-    <DefineConstants>TRACE;DEBUG;PHYSICALASSEMBLY;SILVERLIGHT</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;PHYSICALASSEMBLY;DOTNET40</DefineConstants>
     <DocumentationFile>bin\Debug\Castle.DynamicProxy2.xml</DocumentationFile>
     <DebugSymbols>true</DebugSymbols>
     <FileAlignment>4096</FileAlignment>
-    <NoStdLib>true</NoStdLib>
+    <NoStdLib>false</NoStdLib>
     <NoWarn>1591,3014,3021</NoWarn>
     <Optimize>false</Optimize>
     <RegisterForComInterop>false</RegisterForComInterop>
@@ -52,20 +52,19 @@
     <WarningLevel>4</WarningLevel>
     <DebugType>full</DebugType>
     <ErrorReport>prompt</ErrorReport>
-    <NoConfig>true</NoConfig>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <OutputPath>build\silverlight30\Release</OutputPath>
+    <OutputPath>build\net40\Release</OutputPath>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
     <BaseAddress>285212672</BaseAddress>
     <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
     <ConfigurationOverrideFile>
     </ConfigurationOverrideFile>
-    <DefineConstants>TRACE;PHYSICALASSEMBLY;SILVERLIGHT</DefineConstants>
+    <DefineConstants>TRACE;PHYSICALASSEMBLY;DOTNET40</DefineConstants>
     <DocumentationFile>bin\Release\Castle.DynamicProxy2.xml</DocumentationFile>
     <DebugSymbols>true</DebugSymbols>
     <FileAlignment>4096</FileAlignment>
-    <NoStdLib>true</NoStdLib>
+    <NoStdLib>false</NoStdLib>
     <NoWarn>1591</NoWarn>
     <Optimize>true</Optimize>
     <RegisterForComInterop>false</RegisterForComInterop>
@@ -74,19 +73,20 @@
     <WarningLevel>4</WarningLevel>
     <DebugType>pdbonly</DebugType>
     <ErrorReport>prompt</ErrorReport>
-    <NoConfig>true</NoConfig>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="system">
-      <Private>True</Private>
+    <Reference Include="System">
+      <Name>System</Name>
     </Reference>
-    <Reference Include="mscorlib" />
+    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core">
-      <Private>True</Private>
+      <RequiredTargetFramework>v4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
     </Reference>
     <Reference Include="System.Xml">
       <Name>System.XML</Name>
-      <Private>True</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -340,9 +340,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Castle.Core\Castle.Core-SL.csproj">
+    <ProjectReference Include="..\Castle.Core\Castle.Core-VS2010.csproj">
       <Project>{E4FA5B53-7D36-429E-8E5C-53D5479242BA}</Project>
-      <Name>Castle.Core-SL</Name>
+      <Name>Castle.Core-VS2010</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(RootPath)\Settings.proj" />
@@ -353,12 +353,5 @@
     <PostBuildEvent>
     </PostBuildEvent>
   </PropertyGroup>
-  <ProjectExtensions>
-    <VisualStudio>
-      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
-        <SilverlightProjectProperties />
-      </FlavorProperties>
-    </VisualStudio>
-  </ProjectExtensions>
-  <Import Condition="" Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\v3.0\Microsoft.Silverlight.CSharp.targets" />
+  <Import Condition="" Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
